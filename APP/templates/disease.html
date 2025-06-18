@@ -1,0 +1,72 @@
+{% extends 'layout.html' %} 
+{% block body %}
+
+<style>
+  /* Set the page background color */
+  html, body {
+    background-color: #e0f7fa;
+  }
+
+  /* Style for the container div */
+  .container-div {
+    width: 350px;
+    height: 50rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+    font-weight: bold;
+  }
+
+  /* Style for the file input box */
+  .form-control-file {
+    font-weight: bold;
+    background-color: #f1f8e9;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  /* Style for the Predict button */
+  .btn-predict {
+    font-weight: bold;
+    background-color: #66bb6a; /* Light green color */
+    color: white;
+  }
+
+  /* Style for the header text */
+  .header-text {
+    text-align: center;
+    color: #004d40;
+    margin: 0px;
+    font-weight: 700; /* Bold text for the header */
+  }
+</style>
+
+<br /><br />
+<h1 class="header-text">
+  <b>Find out which disease has been caught by your plant</b>
+</h1>
+<br /><br>
+
+<div class="container-div">
+  <form class="form-signin" method="post" enctype="multipart/form-data">
+    <h2 class="h4 mb-3 font-weight-normal"><b>Please Upload The Image</b></h2>
+    <input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)">
+    <br><br>
+    <img id="output-image" class="rounded mx-auto d-block" />
+    <button class="btn btn-lg btn-predict btn-block" type="submit">Predict</button>
+  </form>
+</div>
+
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image');
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+
+{% endblock %}
