@@ -96,7 +96,7 @@ PlantPulse/
 ## ✨ Contributors  
 - [Riyajalan](https://github.com/Riya-jalan)  
 
-- [Sameeksha](https://github.com/Sameeksha0329)  
+- [Rijo Simon](https://github.com/Rijo-1)  
 
 - [Nishvika](https://github.com/Nish-037) 
 
